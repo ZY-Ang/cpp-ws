@@ -97,9 +97,9 @@ int main() {
         handleError("Unable to bind");
     }
 
-    //Listening for connections from client.
-    //Maximum 5 connection requests are accepted.
-    if (listen(sock, 5) == -1) handleError("Listen");
+    // Listening for connections from client.
+    // Maximum 32768 connection requests are accepted.
+    if (listen(sock, 32768) == -1) handleError("Listen");
 
     cout << "Server started on port " + port << endl;
 
